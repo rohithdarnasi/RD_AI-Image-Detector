@@ -74,4 +74,4 @@ AI detection is a rapidly evolving field. This tool provides an estimate based o
 
 📄 Privacy Policy
 
-See the Privacy Policy[https://docs.google.com/document/d/1UduUmw2jP3JarNK3AMinYMynZcutILBX_7oejUBhIy0/edit?tab=t.0] for full details on our data handling practices.
+See the [Privacy Policy](https://docs.google.com/document/d/1UduUmw2jP3JarNK3AMinYMynZcutILBX_7oejUBhIy0/edit?tab=t.0) for full details on our data handling practices.
