@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Honest AI Detector",
+  "version": "2.0",
+  "description": "Detects AI-generated images using Sightengine API + C2PA metadata + visual heuristics.",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}

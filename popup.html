@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Honest AI Detector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI Detector</h1>
+      <p class="subtitle">Multi-signal image analysis</p>
+    </div>
+
+    <!-- Settings panel (initially hidden) -->
+    <div id="settings-panel" class="settings-panel" style="display:none;">
+      <label for="api-user">Sightengine API User</label>
+      <input type="text" id="api-user" placeholder="e.g. 1234567890" />
+      <label for="api-secret">Sightengine API Secret</label>
+      <input type="password" id="api-secret" placeholder="your-api-secret" />
+      <p class="settings-hint">
+        Get free credentials at <a href="https://sightengine.com" target="_blank">sightengine.com</a> (free tier: 2,000 ops/month).
+      </p>
+      <button id="save-settings" class="btn-primary">Save</button>
+    </div>
+
+    <!-- Main analysis panel -->
+    <div id="main-panel">
+      <div id="no-image-state" class="empty-state">
+        <div class="empty-icon">🖼️</div>
+        <p>Right-click any image on a webpage and select<br><strong>"Check if AI-generated"</strong></p>
+        <button id="open-settings-btn" class="btn-settings">⚙ Configure API Key</button>
+      </div>
+
+      <div id="analysis-state" style="display:none;">
+        <img id="preview" src="" alt="Target image" />
+
+        <div id="loading-state">
+          <div class="spinner"></div>
+          <p class="loading-text">Analyzing image…</p>
+        </div>
+
+        <div id="results-state" style="display:none;">
+          <!-- Overall verdict -->
+          <div class="verdict-card" id="verdict-card">
+            <div class="verdict-label">AI Probability</div>
+            <div class="verdict-score" id="verdict-score">–</div>
+            <div class="verdict-bar-bg">
+              <div class="verdict-bar-fill" id="verdict-bar"></div>
+            </div>
+            <div class="verdict-tag" id="verdict-tag">Analyzing…</div>
+          </div>
+
+          <!-- Signal breakdown -->
+          <div class="signals">
+            <div class="signal-row">
+              <span class="signal-label">🔬 Sightengine AI Model</span>
+              <span class="signal-value" id="sig-sightengine">–</span>
+            </div>
+            <div class="signal-row">
+              <span class="signal-label">🏷 C2PA / EXIF Metadata</span>
+              <span class="signal-value" id="sig-meta">–</span>
+            </div>
+            <div class="signal-row">
+              <span class="signal-label">🔎 Pixel Heuristics</span>
+              <span class="signal-value" id="sig-heuristic">–</span>
+            </div>
+            <div class="signal-row" id="sig-generator-row" style="display:none;">
+              <span class="signal-label">⚙ Detected Generator</span>
+              <span class="signal-value generator-tag" id="sig-generator">–</span>
+            </div>
+          </div>
+
+          <button id="analyze-again-btn" class="btn-secondary">Analyze Another Image</button>
+        </div>
+
+        <div id="error-state" style="display:none;">
+          <p class="error-msg" id="error-msg">Something went wrong.</p>
+          <button id="retry-btn" class="btn-secondary">Retry</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="disclaimer">Scores are probabilistic, not conclusive.</span>
+      <button id="settings-toggle" class="btn-icon" title="Settings">⚙</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
