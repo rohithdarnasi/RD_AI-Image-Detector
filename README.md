@@ -1,5 +1,7 @@
 RD - AI Image Detector Pro
 
+Chrome webstore link : https://chromewebstore.google.com/detail/rd-ai-image-detector/cpojpnbbcobpdfdmilmcpjdabdkhbdmm?hl=en-GB&authuser=0
+
 A transparency-first Chrome Extension designed to help users identify potential AI-generated media. By combining local metadata analysis (C2PA/EXIF) with remote heuristic visual scoring, this extension provides an evidence-based probability score without compromising user privacy.
 
 🚀 Tech Stack
